@@ -14,6 +14,5 @@ My colleague [Chris Laffra](http://www.chrislaffra.com/) created this very cool 
 Also checkout this cool [youtube video](https://www.youtube.com/watch?v=poQKuXgNd88) from the author of this site at Facebook. He used some of my examples there.
 
 
-https://github.com/kalyan359/PyAlgoViz/issues/1
 
 
