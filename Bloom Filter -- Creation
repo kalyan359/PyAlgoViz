@@ -1,0 +1,38 @@
+#One of the algorithms which has blown my mind is a Bloom filter! 
+#I liked the concept very much, and it comes to my mind once every day because of its sheer awesomeness.
+#It operates in a humble humble small array and produces super quick results!
+#sad :( hashlib is not supported here, so came up with some dummy hash functions.
+
+#import hashlib
+
+def bloom_filter():
+    #size of bloom filter is very important
+    #bigger the bloom filter is, the better is its performance(fewer false positives)
+    #also, bloom filters are bitvectors and not lists
+    #here for simplicity purpose, consider bloomfilter as a list of size 10.
+    return [False]*10
+
+def hash_func1(word):
+	# for simplicity sake, picked default hash function
+    # speed of bloom filter depends on speed of hash function
+    # performance of bloom filter on uniform distribution nature of hash func
+    # famous hash functions are fnv,murmur etc.
+    return abs(hash(word))%10
+
+def hash_func2(word):
+	return (sum([ord(i) for i in list(word)])%23)%10
+
+def insert_bloom_filter(word):
+    bloom_filter_list[hash_func1(word)] = True
+    bloom_filter_list[hash_func2(word)] = True
+
+
+bloom_filter_list = bloom_filter()
+word_list = ['Kalyan','Chandra','Chris','Laffra']
+#removed the map usage to make the visualization code easy
+#map(insert_bloom_filter,word_list)
+for word in word_list:
+    insert_bloom_filter(word)
+
+    
+print bloom_filter_list
